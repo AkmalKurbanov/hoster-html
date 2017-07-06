@@ -1,0 +1,53 @@
+.footer {
+  padding: 45px 0 70px;
+  background-color: #3a3c45;
+  min-height: 170px;
+
+  &__phone {
+    text-align: center;
+
+    .fa-mobile {
+      font-size: 27px;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 400;
+      color: #fff;
+      position: relative;
+      margin: 0;
+    }
+  };
+
+  &__logo {
+    width: 160px;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__author {
+    text-align: center;
+  }
+
+  .footer-text {
+    font-weight: 400;
+    font-size: 17px;
+    color: #fff;
+    margin: 0;
+  }
+
+  p {
+    padding-top: 10px;
+    font-size: 14px;
+    font-weight: 100;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+  }
+}

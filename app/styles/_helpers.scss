@@ -1,0 +1,230 @@
+$main: #ff7e05;
+$secondly: #fdd32d;
+
+body,
+html {
+  overflow-x: hidden;
+  // font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto', sans-serif;
+  // height: 100%;
+  overflow-x: hidden;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.title-wrap {
+  text-align: center;
+  z-index: 1;
+
+  p {
+    line-height: normal;
+    font-size: 20px;
+    color: #7b7b7b;
+    @include media-breakpoint-down(xs) {
+      font-size: 16px;
+    }
+  }
+
+  .title {
+    font-size: 40px;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: relative;
+    @include media-breakpoint-down(xs) {
+      font-size: 20px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      background-color: rgb(246, 115, 0);
+      position: absolute;
+      width: 180px;
+      height: 1px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -60px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: rgb(246, 115, 0);
+      position: absolute;
+      width: 180px;
+      height: 1px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -65px;
+    }
+  }
+}
+
+.timer-wrap {
+  text-align: center;
+  height: 550px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  @include media-breakpoint-only(xs) {
+    height: 400px;
+  }
+}
+
+#timer {
+  margin: auto;
+  @include media-breakpoint-only(md) {
+    margin-top: 45px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 0;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+#days {
+  color: $main;
+  font-weight: 300;
+}
+
+#hours {
+  color: $main;
+  font-weight: 300;
+}
+
+#minutes {
+  color: $main;
+  font-weight: 300;
+}
+
+#seconds {
+  color: $main;
+  font-weight: 300;
+}
+
+.timer {
+  text-align: center;
+  display: inline-block;
+  line-height: 50px;
+  font-size: 50px;
+  width: 110px;
+  border-bottom: 1px solid $main;
+  padding-bottom: 10px;
+  margin-left: 100px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+  @include media-breakpoint-only(md) {
+    margin-left: 30px;
+    width: 80px;
+    font-size: 30px;
+    margin: 0 auto;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-left: 30px;
+    width: 80px;
+    font-size: 30px;
+    margin: 0 auto;
+  }
+  @include media-breakpoint-only(xs) {
+    font-size: 18px;
+    margin-left: 10px;
+    width: 60px;
+    margin: 0 auto;
+  }
+
+  span {
+    display: block;
+    color: white;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 30px;
+    @include media-breakpoint-only(md) {
+      font-size: 20px;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: 20px;
+    }
+    @include media-breakpoint-only(xs) {
+      font-size: 15px;
+      line-height: normal;
+    }
+  }
+}
+$bar-width: 35px;
+$bar-height: 5px;
+$bar-spacing: 10px;
+
+.hamburger-menu {
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  margin: auto;
+  width: $bar-width;
+  height: $bar-height + $bar-spacing*2;
+  cursor: pointer;
+  @include media-breakpoint-only(xs) {
+    top: 0;
+  }
+}
+
+.bar,
+.bar:after,
+.bar:before {
+  width: $bar-width;
+  height: $bar-height;
+}
+
+.bar {
+  position: relative;
+  transform: translateY($bar-spacing);
+  background-color: #815A98;
+  transition: all 0 300ms;
+
+  &.animate {
+    background: rgba(255, 255, 255, 0);
+  }
+}
+
+.bar:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: $bar-spacing;
+  background: $main;
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: $bar-spacing;
+  background: $main;
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:after {
+  top: 0;
+  transform: rotate(45deg);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:before {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}

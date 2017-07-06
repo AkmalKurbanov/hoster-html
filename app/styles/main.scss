@@ -1,0 +1,14 @@
+@import "../fonts/ico/css/font.css"; // bower:scss
+ @import "bower_components/bootstrap/scss/bootstrap.scss";
+ @import "bower_components/font-awesome/scss/font-awesome.scss";
+ // endbower
+@import "_helpers";
+@import "_header";
+@import "_price";
+@import "_news";
+@import "_servers";
+@import "_pay";
+@import "_comm";
+@import "_social";
+@import "_contacts";
+@import "_footer";

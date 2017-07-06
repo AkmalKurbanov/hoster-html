@@ -1,0 +1,110 @@
+.social {
+  .title-wrap {
+    text-align: center;
+    z-index: 1;
+
+    p {
+      line-height: normal;
+      font-size: 20px;
+      color: #7b7b7b;
+      @include media-breakpoint-down(xs) {
+        font-size: 16px;
+      }
+    }
+
+    .title {
+      font-size: 40px;
+      font-weight: 300;
+      text-transform: uppercase;
+      position: relative;
+      @include media-breakpoint-down(xs) {
+        font-size: 20px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: rgb(246, 115, 0);
+        position: absolute;
+        width: 180px;
+        height: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -25px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: rgb(246, 115, 0);
+        position: absolute;
+        width: 180px;
+        height: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -30px;
+      }
+    }
+  }
+
+  &__block {
+    padding: 70px 0 60px;
+    text-align: center;
+    @include media-breakpoint-only(xs) {
+      padding: 40px 0 30px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style-type: none;
+        display: inline-block;
+        margin: 0 0 0 13px;
+        padding: 0;
+        @include media-breakpoint-down(sm) {
+          margin: 0 0 0 7px;
+        }
+        @include media-breakpoint-only(xs) {
+          margin: 0 0 0 2px;
+        }
+
+        &:first-child {
+          margin: 0;
+        }
+
+        a {
+          color: $main;
+          font-size: 25px;
+          height: 50px;
+          width: 50px;
+          display: block;
+          border: 1px solid $main;
+          border-radius: 10em;
+          text-align: center;
+          line-height: 50px;
+          transition: all 0.3s;
+
+          &:hover {
+            background-color: $main;
+            color: #fff;
+            transform: rotate(360deg);
+          }
+          @include media-breakpoint-down(sm) {
+            font-size: 20px;
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+          }
+          @include media-breakpoint-only(xs) {
+            font-size: 16px;
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

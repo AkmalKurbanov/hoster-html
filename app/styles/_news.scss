@@ -1,0 +1,346 @@
+.news {
+  min-height: 1350px;
+  background-image: url('../images/bg_news.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 40px;
+
+  &:after {
+    content: '';
+    background-color: rgba(0,0,0,.30);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .title-wrap {
+    text-align: center;
+    z-index: 1;
+    position: relative;
+
+    .title {
+      font-size: 40px;
+      font-weight: 300;
+      text-transform: uppercase;
+      position: relative;
+      color: #fff;
+      @include media-breakpoint-down(xs) {
+        font-size: 20px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: rgb(246, 115, 0);
+        position: absolute;
+        width: 180px;
+        height: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -15px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: rgb(246, 115, 0);
+        position: absolute;
+        width: 180px;
+        height: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+      }
+    }
+  }
+
+  &__steps {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: rgb(135, 135, 135);
+      width: 4px;
+      height: 950px;
+      left: 50%;
+      top: 70px;
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__steps-item {
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      .news__visible-button {
+        text-decoration: none;
+        color: $main;
+        transform: rotate(-2.9deg);
+        bottom: -11px;
+        right: -0.5px;
+
+        .btn-content {
+          display: inline-block;
+          transform: rotate(-357.4deg);
+          padding: 0;
+          margin: 0;
+        }
+      }
+
+      .news--hover {
+        background-color: $secondly;
+        transition: all 0.3s;
+
+        &:before {
+          border: 1px solid $secondly;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+
+  &__caption {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 16px;
+    display: block;
+    background-color: $secondly;
+    width: 100%;
+    min-height: 65px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    position: relative;
+    padding: 0 15px;
+    line-height: normal;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    height: 100%;
+    position: relative;
+    top: 0;
+
+    p {
+      margin: auto;
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      border: 15px solid transparent;
+      border-left: 15px solid $secondly;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__acrive {
+    position: absolute;
+    border-radius: 10em;
+    background-color: #878787;
+    width: 22px;
+    height: 22px;
+    left: 122.7%;
+    top: 25px;
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      border: 1px solid rgb(135, 135, 135);
+      background: transparent;
+      width: 42px;
+      height: 42px;
+      border-radius: 10em;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -11px;
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__desc {
+    min-height: 230px;
+    font-family: 'Roboto Slab', serif;
+    background-color: #fff;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+    padding-right: 30px;
+
+    p {
+      padding: 0 0 20px;
+      margin: 0;
+      font-size: 13px;
+      @include media-breakpoint-down(lg) {
+        padding: 0 0 40px;
+      }
+      @include media-breakpoint-only(xs) {
+        &:first-child {
+          padding: 0 0 20px;
+        }
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      @include media-breakpoint-down(lg) {
+        padding-bottom: 40px;
+      }
+
+      li {
+        list-style-type: none;
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__visible-button {
+    position: absolute;
+    line-height: 40px;
+    display: block;
+    height: 40px;
+    width: 100%;
+    font-size: 13px;
+    text-decoration: none;
+    color: #000;
+    padding-right: 10px;
+    text-align: right;
+    background-color: $secondly;
+    bottom: -30px;
+    transition: all 0.3s;
+    @include media-breakpoint-down(md) {
+      bottom: 0;
+    }
+  }
+
+  &__graphic {
+    padding: 35px 0 0 30px;
+    @include media-breakpoint-down(lg) {
+      padding: 30px 0 0 30px;
+    }
+  }
+
+  &__img-place {
+    height: 190px;
+    background-image: url('../images/news_item1.jpg');
+    background-position: center center;
+    background-size: cover;
+  }
+
+  &--first-news {
+    margin-top: 80px;
+    @include media-breakpoint-only(sm) {
+      margin-top: 30px;
+    }
+    @include media-breakpoint-only(xs) {
+      margin-top: 30px;
+    }
+  }
+
+  &--second-news {
+    margin-top: 170px;
+    @include media-breakpoint-only(sm) {
+      margin-top: 30px;
+    }
+    @include media-breakpoint-only(xs) {
+      margin-top: 30px;
+    }
+
+    &:hover {
+      .news--hover-second {
+        background-color: $secondly;
+
+        &:before {
+          border: 1px solid $secondly;
+        }
+      }
+    }
+  }
+
+  &--third-news {
+    margin-top: 80px;
+    @include media-breakpoint-only(sm) {
+      margin-top: 30px;
+    }
+    @include media-breakpoint-only(xs) {
+      margin-top: 30px;
+    }
+
+    &:hover {
+      .news--hover-second {
+        background-color: $secondly;
+
+        &:before {
+          border: 1px solid $secondly;
+        }
+      }
+    }
+  }
+
+  &--second-caption {
+    &:before {
+      position: absolute;
+      content: '';
+      border: 15px solid transparent;
+      border-left: 15px solid $secondly;
+      left: -30px;
+      top: 25%;
+      transform: rotate(180deg);
+    }
+  }
+
+  .news--hover-second {
+    position: absolute;
+    border-radius: 10em;
+    background-color: #878787;
+    width: 22px;
+    height: 22px;
+    left: -26.7%;
+    top: 25px;
+  }
+
+  &__button {
+    padding-top: 45px;
+
+    .btn {
+      background-color: $secondly;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      display: block;
+      border-radius: 0;
+      width: 135px;
+      height: 35px;
+      line-height: 15px;
+      margin: 0 auto;
+      font-size: 16px;
+      font-weight: 400;
+      transition: all 0.3s;
+      outline: none;
+
+      &:hover {
+        background: transparent;
+        border: 1px solid $secondly;
+        color: $secondly;
+      }
+    }
+  }
+}
